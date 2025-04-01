@@ -1,0 +1,115 @@
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 16px; /**1rem = 10px**/
+}
+
+.contenedor{
+    width: 120rem;
+    margin: 0 auto;
+}
+
+header{
+    background-color: gray;
+}
+
+.navegador-principal{
+    background-color: gray;
+    
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navegador-principal a{
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.navegador-principal a:hover{
+    background-color: #ffc107;
+    color: black;
+}
+
+h1{
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+.formulario{
+    background-color: gray;
+    width: min(70rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align: justify;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: yellow;
+}
+
+.contenedor-campos{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 1rem;
+    
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.campo textarea{
+    height: 6rem;
+    width: 80%;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.campo input{
+    width: 80%;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.campo select{
+    width: 82%;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.boton{
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
