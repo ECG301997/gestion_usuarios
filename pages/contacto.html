@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <link rel="preload" href="./styles/contacto.css" as="stylesheet"> 
-    <link href="./styles/contacto.css" rel="stylesheet">
-   
+    <link rel="preload" href="./../styles/contacto.css" as="stylesheet">
+    <link href="./../styles/contacto.css" rel="stylesheet">
+
 </head>
+
 <body>
     <header>
-        
+
         <nav class="navegador-principal contenedor">
-            <a href="index.html">Inicio</a>
+            <a href="./../index.html">Inicio</a>
             <a href="#">Cuenta</a>
             <a href="contacto.html">Contacto</a>
         </nav>
@@ -21,81 +23,82 @@
     <section>
         <h1>Contacto</h1>
     </section>
-    
+
     <section>
         <form class="formulario">
             <legend>
                 Si tienes alguna consulta, peticion, sugerencia, queja o reclamo, puedes
                 llenar el formulario que encuentras a continuacion o comunicate por nuestros
-                canales de atencion.                
+                canales de atencion.
             </legend>
-                
-            
+
+
             <fieldset>
                 <div class="contenedor-campos">
                     <div class="campo">
-                        <label>Tipo de identificación</label>
-                        <select name="Tipo">
+                        <label for="tipo-identificacion">Tipo de identificación</label>
+                        <select id="tipo-identificacion" name="Tipo">
                             <option value="C">Cedula de Ciudadania</option>
                             <option value="T">Tarjeta de Identidad</option>
                             <option value="P">Pasaporte</option>
                             <option value="E">Cedula de Extranjeria</option>
                             <option value="N">Nit</option>
-                          </select>
+                        </select>
                     </div>
-        
+
                     <div class="campo">
-                        <label>Identificación</label>
-                        <input type="text" placeholder="Identificación">
+                        <label for="identificacion">Identificación</label>
+                        <input id="identificacion" type="text" placeholder="Identificación">
                     </div>
-        
+
                     <div class="campo">
-                        <label>Nombre Completo</label>
-                        <input type="text" placeholder="Nombre Completo">
+                        <label for="nombre-completo">Nombre Completo</label>
+                        <input id="nombre-completo" type="text" placeholder="Nombre Completo">
                     </div>
-        
+
                     <div class="campo">
-                        <label>Correo electronico</label>
-                        <input type="email" placeholder="Correo electronico">
+                        <label for="correo-electronico">Correo electronico</label>
+                        <input id="correo-electronico" type="email" placeholder="Correo electronico">
                     </div>
-        
+
                     <div class="campo">
-                        <label>Ciudad</label>
-                        <input type="text" placeholder="Ciudad">
+                        <label for="ciudad">Ciudad</label>
+                        <input id="ciudad" type="text" placeholder="Ciudad">
                     </div>
-        
+
                     <div class="campo">
-                        <label>Telefono</label>
-                        <input type="tel" placeholder="Telefono">
+                        <label for="telefono">Telefono</label>
+                        <input id="telefono" type="tel" placeholder="Telefono">
                     </div>
-    
+
                     <div class="campo">
-                        <label>Tipo Mensaje</label>
-                        <select name="Tipo">
+                        <label for="tipo-mensaje">Tipo Mensaje</label>
+                        <select id="tipo-mensaje" name="Tipo">
                             <option value="C">Consulta</option>
                             <option value="P">Peticion</option>
                             <option value="Q">Queja</option>
                             <option value="R">Reclamo</option>
                             <option value="S">Sugerencia</option>
-                          </select>
-                    </div>     
-    
+                        </select>
+                    </div>
+
                     <div class="campo">
-                        <label>Mensaje</label>
-                        <textarea></textarea>
-                    </div>                    
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje"></textarea>
+                    </div>
                 </div>
-                
+
                 <div>
                     <input class="boton" type="submit" value="Enviar">
                 </div>
             </fieldset>
         </form>
     </section>
-    
+
     <footer>
 
     </footer>
-    
+
 </body>
+
 </html>
