@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="./../styles/finalizar-compra.css">
+</head>
+
+<body>
+    <!-- Barra Superior -->
+    <header>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <img src="./../img/lupa.png" alt="Lupa">
+        </div>
+        <nav class="nav-links">
+            <a href="./../index.html">Inicio</a>
+            <a href="./../pages/Iniciarsesion.html">Cuenta</a>
+            <a href="./finalizar-compra.html" class="cart-icon">🛒</a>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <section class="cart-details">
+            <div class="row headers">
+                <span>Nombre del Libro</span>
+                <span>Precio</span>
+                <span>Cantidad</span>
+                <span>Subtotal</span>
+            </div>
+
+            <!-- Productos agregados dinámicamente -->
+            <div class="products">
+                <!-- Este contenedor será llenado con JavaScript -->
+            </div>
+        </section>
+
+        <!-- Botón Finalizar Compra y Total -->
+        <section class="checkout-summary">
+            <button class="finalize-button">Finalizar Compra</button>
+            <div class="total">
+                <span>Total:</span>
+                <span class="final-price">$0</span>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

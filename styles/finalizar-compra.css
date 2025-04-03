@@ -1,0 +1,116 @@
+/* Estilo General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ccc;
+    padding: 10px 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+
+.search-bar img {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.cart-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Content Styles */
+main {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Cart Details Section */
+.cart-details .headers {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    background-color: #e6e6e6;
+    padding: 10px;
+}
+
+.cart-details .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-details .row:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.cart-details .row span {
+    flex: 1;
+    text-align: center;
+}
+
+/* Checkout Summary Styles */
+.checkout-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 2px solid #ccc;
+    background-color: #e6e6e6;
+}
+
+.finalize-button {
+    background-color: #339af0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.finalize-button:hover {
+    background-color: #227dc7;
+}
+
+.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
