@@ -91,42 +91,37 @@ document.addEventListener("DOMContentLoaded", function () {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
 
+    // Función para agregar productos al carrito
     window.addToCart = function (productId) {
-        productId = Number(productId);
-        console.log(typeof productId);
-        console.log(productId);
+        productId = Number(productId); // Asegura que el ID del producto sea un número
+        const product = products.find(p => p.id === productId); // Encuentra el producto por ID
         
         
-        // Verifica si la lista de productos está definida y no está vacía
-        
-        if (!products || products.length === 0) {
-            console.error("La lista de productos no está disponible.");
-            return;
-        }
-
         // Encuentra el producto por ID
-        const product = products.find(p => p.id === productId);
-        if (!product) {
-            console.error("Producto no encontrado con el ID:", productId);
+        
+        if (!products) {
+            console.error("La lista de productos no está disponible.", productId);
             return;
         }
 
-        // Busca si el producto ya está en el carrito
-        let existingProduct = jsoncart.find(p => p.product.id === productId);
+        // Obtiene el carrito del localStorage o inicializa uno vacío
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let existingProduct = cart.find(p => p.product.id === productId);
         if (existingProduct) {
-            existingProduct.quantity += 1; // Incrementa la cantidad
-            existingProduct.totalPrice = existingProduct.quantity * product.price; // Actualiza el precio total
+        existingProduct.quantity += 1;
+        
+        // Incrementa la cantidad si el producto ya está en el carrito
+        existingProduct.totalPrice = existingProduct.quantity * product.price; // Actualiza el precio total
         } else {
-            // Agrega un nuevo producto al carrito
-            jsoncart.push({
-                product: product,
-                quantity: 1,
-                totalPrice: product.price
+        // Agrega un nuevo producto al carrito
+        cart.push({
+            product: product,
+            quantity: 1,
+            totalPrice: product.price
             });
         }
-        localStorage.setItem("cart", JSON.stringify(jsoncart));
-
-        console.log("Carrito actualizado:", jsoncart);
+    localStorage.setItem("cart", JSON.stringify(cart)); // Guarda el carrito actualizado en el localStorage
+    console.log("Carrito actualizado:", cart);
     };
 
     window.buy = function (productId) {
