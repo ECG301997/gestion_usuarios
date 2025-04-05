@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const productsContainer = document.getElementById("products-container");
 
-    const jsoncart = [];
-
-
-    let products = JSON.parse(localStorage.getItem("products")) || [
+    
+    let products = [
         { id: 1, productName: "LAS VIDAS DENTRO DE TU CABEZA", description: "Una profunda exploración de la mente humana y sus múltiples facetas, llevándonos a cuestionar la realidad y la percepción.", price: 100000, img: "./../img/las_vidas_dentro_de_tu_cabeza.png" },
         { id: 2, productName: "LA DIVINA COMEDIA", description: "Un viaje épico a través del Infierno, el Purgatorio y el Paraíso, guiado por el poeta Virgilio. Una obra maestra de la literatura universal.", price: 250000, img: "./../img/la_divina_comedia.png" },
         { id: 3, productName: "EL LIBRO DE URANTIA", description: "Una obra espiritual y filosófica que presenta una cosmología detallada y una visión de la relación entre Dios y la humanidad.", price: 200000, img: "./../img/urantia.png" },
@@ -51,13 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                     <div class="button-item">
                         <button class="add" onclick="addToCart(${product.id})">Agregar</button>
-                        <button class="buy" onclick="buy(${product})">Comprar</button>
+                        <button class="buy" onclick="buy(${product.id})">Comprar</button>
                     </div>
                 </div>
             `;
             productsContainer.appendChild(productCard);
         });
-        localStorage.setItem("products", JSON.stringify(products));
+ 
     }
 
     function openModal(product) {
@@ -125,7 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     window.buy = function (productId) {
+        addToCart(productId); // Agrega el producto al carrito
 
+        window.location.href = "./pages/finalizar-compra.html"; // Redirige a la página del carrito
     }
 
     function attachEventListeners() {
