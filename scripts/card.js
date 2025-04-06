@@ -1,8 +1,11 @@
+// Ejecuta el código una vez que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
+    // Contenedor donde se renderizarán los productos
     const productsContainer = document.getElementById("products-container");
 
-    
+    // listado de productos
     let products = [
+        // Cada producto tiene un id, nombre, descripción, precio e imagen
         { id: 1, productName: "LAS VIDAS DENTRO DE TU CABEZA", description: "Una profunda exploración de la mente humana y sus múltiples facetas, llevándonos a cuestionar la realidad y la percepción.", price: 100000, img: "./../img/las_vidas_dentro_de_tu_cabeza.png" },
         { id: 2, productName: "LA DIVINA COMEDIA", description: "Un viaje épico a través del Infierno, el Purgatorio y el Paraíso, guiado por el poeta Virgilio. Una obra maestra de la literatura universal.", price: 250000, img: "./../img/la_divina_comedia.png" },
         { id: 3, productName: "EL LIBRO DE URANTIA", description: "Una obra espiritual y filosófica que presenta una cosmología detallada y una visión de la relación entre Dios y la humanidad.", price: 200000, img: "./../img/urantia.png" },
@@ -25,13 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 20, productName: "ORGULLO Y PREJUICIO", description: "Una novela romántica que explora las relaciones entre la clase alta inglesa y las complejidades del amor y el matrimonio.", price: 200, img: "./../img/orgullo_prejuicio.png" },
 
     ];
-
+    // Función para renderizar los productos en el contenedor
     function renderProducts() {
-        productsContainer.innerHTML = "";
+        productsContainer.innerHTML = ""; // Limpia el contenedor antes de renderizar
         products.forEach(product => {
-            const productCard = document.createElement("div");
-            productCard.classList.add("card-item");
-            const shortDescription = product.description.substring(0, 50) + "...";
+            const productCard = document.createElement("div"); // Crea un contenedor para cada producto
+            productCard.classList.add("card-item"); // Agrega una clase para estilos
+            const shortDescription = product.description.substring(0, 50) + "..."; // Corta la descripción para mostrar un resumen
             productCard.innerHTML = `
                 <div class="separator-item">
                     <div class="info-item">
@@ -53,14 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             `;
-            productsContainer.appendChild(productCard);
+            productsContainer.appendChild(productCard); // Agrega el producto al contenedor
         });
  
     }
-
+ 
+    // Función para abrir el modal con la información del producto
     function openModal(product) {
-        const modal = document.createElement("div");
-        modal.classList.add("modal");
+        const modal = document.createElement("div"); // Crea un nuevo elemento modal
+        modal.classList.add("modal"); // Agrega una clase para estilos
         modal.innerHTML = `
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
@@ -70,21 +74,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h4 class="price">$${formatPrice(product.price)}</h4>
             </div>
         `;
-        document.body.appendChild(modal);
+        document.body.appendChild(modal); // Agrega el modal al cuerpo del documento
 
+        // Agrega un evento para cerrar el modal al hacer clic en la "X"
         modal.querySelector(".close-modal").addEventListener("click", function () {
             modal.remove();
         });
     }
 
+    // Función para manejar el evento de clic en "Ver más" y abrir el modal
     function toggleDescription(event) {
-        event.preventDefault();
-        const id = event.target.getAttribute("data-id");
-        const product = products.find(p => p.id == id);
-        openModal(product);
+        event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+        const id = event.target.getAttribute("data-id"); // Obtiene el ID del producto
+        const product = products.find(p => p.id == id); // Busca el producto por ID
+        openModal(product); // Abre el modal con la información del producto
     }
 
-
+    // Función para formatear el precio con separadores de miles
     const formatPrice = (price) => {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
@@ -133,10 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
             button.addEventListener("click", toggleDescription);
         });
     }
-
+    // Renderiza los productos y agrega los listeners al cargar la página
     renderProducts();
     attachEventListeners();
 
+    // Estilos dinámicos para el modal y los productos
     const style = document.createElement("style");
     style.innerHTML = `
         .card-item {
@@ -175,6 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
             height: auto;
         }
     `;
-    document.head.appendChild(style);
+    document.head.appendChild(style); // Agrega los estilos al documento
 
 });
